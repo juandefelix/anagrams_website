@@ -1,8 +1,14 @@
 get '/' do
+  @anagram = params[:word]
   # Look in app/views/index.erb
   erb :index
 end
 
-get '/word' do
-  Word.anagrams(params[:user_input])
+
+post '/word' do
+    response = Word.anagrams(params[:user_input])
+
+    redirect to ("/?word=#{response}")
+
 end
+
