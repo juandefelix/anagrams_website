@@ -1,6 +1,6 @@
 ### Help
 
-**Generating migrations in Sinatra:
+**Generating migrations in Sinatra:**
 ```
 $ rake generate:model NAME=<Word>
 $ rake generate:migration NAME=create_words
