@@ -8,8 +8,7 @@ end
 
 post '/word' do
     response = Word.anagrams(params[:user_input])
-    response = response.join(", ").upcase
-
+    response = response.reduce(" ") { |str, obj|  str << obj.word + " " }.strip
     redirect to ("/?word=#{response}")
 
 end
